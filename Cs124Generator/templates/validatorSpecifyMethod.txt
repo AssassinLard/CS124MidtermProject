@@ -1,0 +1,6 @@
+
+    public void validate{$METHOD_NAME}()
+    {
+{$DEPENDENCY_CHECK}  
+        validateNonNullSpecifyField(model.get{$METHOD_SELECTABLE_NAME}(),{$POSITION},model.get{$METHOD_NAME}(), activity.getPage("{$FRAGMENT_NAME}"), R.id.{$FIELD_NAME}Container, {$ORIG_FIELD});   
+    }

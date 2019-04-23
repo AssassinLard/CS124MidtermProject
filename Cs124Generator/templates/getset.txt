@@ -1,0 +1,15 @@
+
+	public {$TYPE} get{$FIELD_NAME_CC}() {
+		return this.{$FIELD_NAME};
+	}
+
+	public void set{$FIELD_NAME_CC}({$TYPE} {$FIELD_NAME}) {
+	
+		if (this.{$FIELD_NAME}==null || !this.{$FIELD_NAME}.equals({$FIELD_NAME}))
+		{
+			editing = true;
+			synced = false;
+		}
+	
+		this.{$FIELD_NAME} = {$FIELD_NAME};
+	}

@@ -1,0 +1,51 @@
+{
+	"facility_id": "FACILITY_ID",
+	"user_id": "USER_ID",		
+	"type":"NurseRegistration",
+	"patient_id": "PATIENT_ID, if needed",	
+
+
+	"data":
+	{
+		"uuid": "UUID of object"	
+		,"ownerUuid": "UUID of basic information, if needed"	
+		
+		,"shine_id":"text"
+
+
+		,"nan_number":"text"
+		,"first_name":"text"
+		,"middle_name":"text"
+		,"last_name":"text"
+		,"sex":0
+		,"citizenship_number":"text"
+		,"date_of_birth_in_ad":"mm/dd/yyyy"
+		,"date_of_birth_in_bs":"mm/dd/yyyy"
+		,"age":0
+
+
+		,"temp_house_number":"text"
+		,"temp_ward_number":"text"
+		,"temp_municipality":"text"
+		,"temp_district":"text"
+		,"temp_country":"text"
+		,"temp_zipcode":"text"
+
+
+		,"permanent_house_number":"text"
+		,"permanent_ward_number":"text"
+		,"permanent_municipality":"text"
+		,"permanent_district":"text"
+		,"permanent_country":"text"
+		,"permanent_zipcode":"text"
+
+
+		,"professional_status":"text"
+		,"designation":"text"
+		,"office":"text"
+		,"qualifications":[]
+		,"trainings":[]
+
+
+	}
+}

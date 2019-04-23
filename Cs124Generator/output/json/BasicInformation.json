@@ -1,0 +1,68 @@
+{
+	"facility_id": "FACILITY_ID",
+	"user_id": "USER_ID",		
+	"type":"BasicInformation",
+	"patient_id": "PATIENT_ID, if needed",	
+
+
+	"data":
+	{
+		"uuid": "UUID of object"	
+		,"ownerUuid": "UUID of basic information, if needed"	
+		
+		,"patient_id":"text"
+
+
+		,"first_name":"text"
+		,"middle_name":"text"
+		,"last_name":"text"
+		,"sex":0
+		,"marital_status":0
+		,"date_of_birth_in_ad":"mm/dd/yyyy"
+		,"date_of_birth_in_bs":"mm/dd/yyyy"
+		,"age":0
+
+
+		,"family_i_d":"text"
+		,"type_of_family":0
+		,"house_number":"text"
+		,"ward_number":"text"
+		,"municipality":"text"
+		,"district":"text"
+		,"country":"text"
+		,"zipcode":"text"
+		,"fathers_name":"text"
+		,"father_late":0
+		,"mothers_name":"text"
+		,"mother_late":0
+		,"local_guardians_name":"text"
+		,"contact_of_parent_guardian":"text"
+		,"number_male":0
+		,"number_female":0
+		,"number_others":0
+		,"number_male_under5":0
+		,"number_female_under5":0
+		,"number_male_above60":0
+		,"number_female_above60":0
+		,"number_disabled":0
+		,"number_pregnant":0
+		,"number_lactating_mothers":0
+
+
+		,"ethnicity":"text"
+		,"religion":"text"
+		,"educational_status":0
+		,"occupation":0
+		,"occupation_specify":"text"
+		,"income_agriculture":0
+		,"income_business":0
+		,"income_service":0
+		,"income_labor":0
+		,"income_remittance":0
+		,"income_others":0
+		,"income_specify":"text"
+		,"food_sufficiency":0
+
+
+	}
+}

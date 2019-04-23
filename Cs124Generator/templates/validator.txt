@@ -1,0 +1,33 @@
+package com.ajwcc.epinurse.{$MODEL_CLASS}.gen;
+
+import com.ajwcc.epinurse.common.BaseValidator;
+import com.ajwcc.util.ui.validation.ValidationHandler;
+import com.ajwcc.epinurse.R;
+
+public class {$MODEL_CLASS}Validator extends BaseValidator implements ValidationHandler<{$MODEL_CLASS}>
+{
+    protected {$MODEL_CLASS} model;
+    protected {$MODEL_CLASS}Activity activity;
+
+
+    public {$MODEL_CLASS}Validator({$MODEL_CLASS}Activity a)
+    {
+    	super(a);
+        activity = a;
+    }
+
+    @Override
+    public void setModel({$MODEL_CLASS} model)
+    {
+        this.model = model;
+    }
+
+    @Override
+    public void validateModel()
+    {
+{$MODEL_VALIDATION}
+    }
+
+{$VALIDATION_METHODS}
+
+}

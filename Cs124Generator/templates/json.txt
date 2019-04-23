@@ -1,0 +1,16 @@
+{
+	"facility_id": "FACILITY_ID",
+	"user_id": "USER_ID",		
+	"type":"{$MODEL_NAME}",
+	"patient_id": "PATIENT_ID, if needed",	
+
+
+	"data":
+	{
+		"uuid": "UUID of object"	
+		,"ownerUuid": "UUID of basic information, if needed"	
+		
+{$FIELDS}
+
+	}
+}

@@ -1,0 +1,134 @@
+{
+	"facility_id": "FACILITY_ID",
+	"user_id": "USER_ID",		
+	"type":"StudentHealthAssessment",
+	"patient_id": "PATIENT_ID, if needed",	
+
+
+	"data":
+	{
+		"uuid": "UUID of object"	
+		,"ownerUuid": "UUID of basic information, if needed"	
+		
+		,"shine_id":"text"
+
+
+		,"vaccines_bcg":0
+		,"vaccines_dpt":0
+		,"vaccines_opv":0
+		,"vaccines_pcv":0
+		,"vaccines_mr":0
+		,"vaccines_je":0
+		,"vaccines_td":0
+		,"vaccines_others":0
+		,"vaccines_specify":"text"
+		,"temperature":0.0
+		,"systolic":0
+		,"diastolic":0
+		,"height_cm":0.0
+		,"weight_kg":0.0
+		,"bmi":0
+		,"bmi_computed":0.0
+		,"acute_respiratory_infection":0
+		,"acute_watery_diarrhea":0
+		,"acute_bloody_diarrhea":0
+		,"acute_jaundice_infection":0
+		,"suspected_meningitis":0
+		,"suspected_tetanus":0
+		,"acute_flaccid_paralysis":0
+		,"acute_hemorraphic_fever":0
+		,"fever":0
+
+
+		,"trauma_major_head":0
+		,"trauma_major_head_specify":"text"
+		,"trauma_major_spinal":0
+		,"trauma_major_spinal_specify":"text"
+		,"trauma_major_torso":0
+		,"trauma_major_torso_specify":"text"
+		,"trauma_left_leg":0
+		,"trauma_left_leg_specify":"text"
+		,"trauma_right_leg":0
+		,"trauma_right_leg_specify":"text"
+		,"trauma_left_arm":0
+		,"trauma_left_arm_specify":"text"
+		,"trauma_right_arm":0
+		,"trauma_right_arm_specify":"text"
+		,"skin_diseases":0
+		,"skin_diseases_specify":"text"
+		,"allegies":0
+		,"allegies_specify":"text"
+		,"respiratory_disease":0
+		,"respiratory_disease_specify":"text"
+		,"cardiovascular_disease":0
+		,"cardiovascular_disease_specify":"text"
+		,"endocrine_disease":0
+		,"endocrine_disease_specify":"text"
+		,"urinary_system_disease":0
+		,"urinary_system_disease_specify":"text"
+		,"reproductiv_system_disease":0
+		,"reproductiv_system_disease_specify":"text"
+		,"communication_hearing_problem":0
+		,"communication_hearing_problem_specify":"text"
+		,"vision_problem":0
+		,"vision_problem_specify":"text"
+		,"oral_dental_health_problem":0
+		,"oral_dental_health_problem_specify":"text"
+		,"psychological_problem":0
+		,"psychological_problem_specify":"text"
+		,"physical_structural_problems":0
+		,"physical_structural_problems_specify":"text"
+		,"cognative_patterns":0
+		,"cognative_patterns_specify":"text"
+		,"bowel_habit":0
+		,"bowel_habit_specify":"text"
+		,"bladder_habit":0
+		,"bladder_habit_specify":"text"
+		,"under_medication":0
+		,"under_medication_specify":"text"
+		,"recent_treatment":0
+		,"recent_treatment_specify":"text"
+		,"recent_procedure":0
+		,"recent_procedure_specify":"text"
+		,"recent_counseling":0
+		,"recent_counseling_specify":"text"
+
+
+		,"bh_suspension":0
+		,"bh_suspension_specify":"text"
+		,"bh_anti_social_behavior":0
+		,"bh_delinquency":0
+		,"bh_violence":0
+		,"bh_smoking":0
+		,"bh_alcohol":0
+		,"bh_substance_abuse":0
+		,"bh_suicidal_thoughts":0
+		,"bh_suicidal_attempts":0
+		,"breakfast_place":"text"
+		,"breakfast_time":"text"
+		,"breakfast_type_of_food":"text"
+		,"lunch_place":"text"
+		,"lunch_time":"text"
+		,"lunch_type_of_food":"text"
+		,"snack_place":"text"
+		,"snack_time":"text"
+		,"snack_type_of_food":"text"
+		,"dinner_place":"text"
+		,"dinner_time":"text"
+		,"dinner_type_of_food":"text"
+		,"malnutrition":0
+		,"malnutrition_specify":"text"
+		,"idle_hours":"text"
+		,"active_hours":"text"
+		,"age_of_menarche":0
+		,"menstruation_materials":"text"
+		,"family_interaction":0
+		,"family_interaction_specify":"text"
+		,"community_involvement":0
+		,"community_involvement_specify":"text"
+		,"child_drr_knowledge":0
+		,"child_complaint":"text"
+
+
+	}
+}

@@ -1,0 +1,5 @@
+
+    public void serialize{$METHOD_NAME}({$MODEL_CLASS} model, JsonObject object, JsonSerializationContext context)
+    {
+        object.add("{$FIELD_NAME}", context.serialize(model.get{$METHOD_NAME}()));
+    }

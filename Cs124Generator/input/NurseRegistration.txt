@@ -1,0 +1,55 @@
+MODEL;Nurse Registration
+SHINE ID; STRING:text; UNMAPPED
+
+FRAGMENT;Registration
+LABEL;NAN Registration
+NAN Registration No; STRING:text; FIELDNAME:nanNumber
+First Name; 	STRING:textPersonName; FIELDNAME:firstName
+Middle Name; 	STRING:textPersonName; FIELDNAME:middleName|OPTIONAL
+Last Name; 		STRING:textPersonName; FIELDNAME:lastName
+Sex; 			SINGLE:{Male, Female}; FIELDNAME:sex
+Citizenship No; STRING:text; FIELDNAME:citizenshipNumber
+
+LABEL;Birth Information (MM/DD/YYYY)
+Date of Birth in AD;  DATE; FIELDNAME:dateOfBirthInAd
+Date of Birth in BS;  DATE; FIELDNAME:dateOfBirthInBs
+Age; STRING:number; FIELDNAME:age
+
+
+FRAGMENT;Temporary Address
+LABEL;Temporary Address
+House Number; STRING:textPostalAddress; FIELDNAME:tempHouseNumber
+Ward Number; STRING:textPostalAddress; FIELDNAME:tempWardNumber
+Municipality; STRING:textPostalAddress; FIELDNAME:tempMunicipality
+District; STRING:textPostalAddress; FIELDNAME:tempDistrict
+Country; STRING:textPostalAddress; FIELDNAME:tempCountry
+ZipCode; STRING:textPostalAddress; FIELDNAME:tempZipcode
+
+
+FRAGMENT;Permanent Address
+LABEL;Permanent Address
+House Number; STRING:textPostalAddress; FIELDNAME:permanentHouseNumber
+Ward Number; STRING:textPostalAddress; FIELDNAME:permanentWardNumber
+Municipality; STRING:textPostalAddress; FIELDNAME:permanentMunicipality
+District; STRING:textPostalAddress; FIELDNAME:permanentDistrict
+Country; STRING:textPostalAddress; FIELDNAME:permanentCountry
+ZipCode; STRING:textPostalAddress; FIELDNAME:permanentZipcode
+
+
+
+FRAGMENT;Professional Information
+Professional Status; STRING:text; FIELDNAME:professionalStatus
+Designation; STRING:text; FIELDNAME:designation
+Office; STRING:text; FIELDNAME:office
+
+
+
+
+# professional qualification fragment goes here
+qualifications ;LIST:com.ajwcc.epinurse.nurseregistration.ui.QualificationEntry; UNMAPPED
+
+# special trainings fragment goes here
+trainings ;LIST:com.ajwcc.epinurse.nurseregistration.ui.TrainingEntry; UNMAPPED
+
+
+

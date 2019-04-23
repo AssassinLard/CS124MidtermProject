@@ -1,0 +1,117 @@
+MODEL;Student Health Assessment
+SHINE ID; STRING:text; UNMAPPED
+
+FRAGMENT;Page1
+LABEL;Immunization Status
+Vaccines Administered; 	MULTI:{BCG,DPT,OPV,PCV,MR,JE,TD,Others(specify)}; FIELDNAME:vaccines
+
+LABEL;Vital Signs
+Temperature(F); STRING:numberDecimal; FIELDNAME:temperature
+
+LABEL;Blood Pressure
+Systolic; STRING:number; FIELDNAME:systolic
+Diastolic; STRING:number; FIELDNAME:diastolic
+
+Height in Centimeter; STRING:numberDecimal; FIELDNAME:heightCm
+Weight in KG; STRING:numberDecimal; FIELDNAME:weightKg
+BMI; SINGLE:{Underweight,Normal,Overweight,Obese}; FIELDNAME:bmi
+BMI computed; STRING:numberDecimal; FIELDNAME:bmiComputed
+
+
+LABEL;Infectuous Disease
+Acute Respiratory Infection; SINGLE:{No,Yes}; FIELDNAME:acuteRespiratoryInfection
+Acute Watery Diarrhea; SINGLE:{No,Yes}; FIELDNAME:acuteWateryDiarrhea
+Acute Bloody Diarrhea; SINGLE:{No,Yes}; FIELDNAME:acuteBloodyDiarrhea
+Acute Jaundice Infection; SINGLE:{No,Yes}; FIELDNAME:acuteJaundiceInfection
+Suspected Meningitis; SINGLE:{No,Yes}; FIELDNAME:suspectedMeningitis
+Suspected Tetanus; SINGLE:{No,Yes}; FIELDNAME:suspectedTetanus
+Acute Flaccid Paralysis; SINGLE:{No,Yes}; FIELDNAME:acuteFlaccidParalysis
+Acute Hemorrhagic Fever; SINGLE:{No,Yes}; FIELDNAME:acuteHemorraphicFever
+Fever; SINGLE:{No,Yes}; FIELDNAME:fever
+
+
+FRAGMENT;Page2 
+Any Major Head Injury/Trauma; SINGLE:{No,Yes(specify)}; FIELDNAME:traumaMajorHead
+Any Major Spinal Injury; SINGLE:{No,Yes(specify)}; FIELDNAME:traumaMajorSpinal
+Any Major Torso Injury; SINGLE:{No,Yes(specify)}; FIELDNAME:traumaMajorTorso
+Any Left Leg Injury; SINGLE:{No,Yes(specify)}; FIELDNAME:traumaLeftLeg
+Any Right Leg Injury; SINGLE:{No,Yes(specify)}; FIELDNAME:traumaRightLeg
+Any Left Arm Injury; SINGLE:{No,Yes(specify)}; FIELDNAME:traumaLeftArm
+Any Right Arm Injury; SINGLE:{No,Yes(specify)}; FIELDNAME:traumaRightArm
+
+LABEL;Medical Condition
+Skin diseases?; SINGLE:{No,Yes(specify)}; FIELDNAME:skinDiseases
+Any Allergies?; SINGLE:{No,Yes(specify)}; FIELDNAME:allegies
+Respiratory Disease; SINGLE:{No,Yes(specify)}; FIELDNAME:respiratoryDisease
+Cardiovascular Disease; SINGLE:{No,Yes(specify)}; FIELDNAME:cardiovascularDisease
+Endocrine Disease; SINGLE:{No,Yes(specify)}; FIELDNAME:endocrineDisease
+Urinary System Disease; SINGLE:{No,Yes(specify)}; FIELDNAME:urinarySystemDisease
+Reproductive System Disease; SINGLE:{No,Yes(specify)}; FIELDNAME:reproductivSystemDisease
+Communication and Hearing Problem; SINGLE:{No,Yes(specify)}; FIELDNAME:communicationHearingProblem
+Vision Problem; SINGLE:{No,Yes(specify)}; FIELDNAME:visionProblem
+Oral and Dental Health Problem; SINGLE:{No,Yes(specify)}; FIELDNAME:oralDentalHealthProblem
+Psychological and Behavioral Problem; SINGLE:{No,Yes(specify)}; FIELDNAME:psychologicalProblem
+Physical Functioning and Structural Problems; SINGLE:{No,Yes(specify)}; FIELDNAME:physicalStructuralProblems
+Cognitive Patterns; SINGLE:{Normal,Abnormal(specify)}; FIELDNAME:cognativePatterns
+Bowel Habit; SINGLE:{Normal,Abnormal(specify)}; FIELDNAME:bowelHabit
+Bladder Habit; SINGLE:{Normal,Abnormal(specify)}; FIELDNAME:bladderHabit
+
+
+Is under any medications; SINGLE:{No,Yes(specify)}:name of medications; FIELDNAME:underMedication
+
+Received any recent treatment; SINGLE:{No,Yes(specify)}; FIELDNAME:recentTreatment
+Received any recent procedure; SINGLE:{No,Yes(specify)}; FIELDNAME:recentProcedure
+Received any recent counseling; SINGLE:{No,Yes(specify)}; FIELDNAME:recentCounseling
+
+
+
+FRAGMENT;Page3
+LABEL;Behavioral Health
+Suspension from school; SINGLE:{No,Yes(specify)}; FIELDNAME:bhSuspension
+Anti-social behavior; SINGLE:{No,Yes}; FIELDNAME:bhAntiSocialBehavior
+Delinquency; SINGLE:{No,Yes}; FIELDNAME:bhDelinquency
+Violence; SINGLE:{No,Yes}; FIELDNAME:bhViolence
+Smoking; SINGLE:{No,Yes}; FIELDNAME:bhSmoking
+Alcohol; SINGLE:{No,Yes}; FIELDNAME:bhAlcohol
+Substance Abuse; SINGLE:{No,Yes}; FIELDNAME:bhSubstanceAbuse
+Suicidal Thoughts; SINGLE:{No,Yes}; FIELDNAME:bhSuicidalThoughts
+Suicidal Attempts; SINGLE:{No,Yes}; FIELDNAME:bhSuicidalAttempts
+
+LABEL;Food Intake
+LABEL;Breakfast
+Place;STRING:text;FIELDNAME:breakfastPlace
+Time;STRING:text;FIELDNAME:breakfastTime
+Type of food;STRING:text;FIELDNAME:breakfastTypeOfFood
+
+LABEL;Lunch
+Place;STRING:text;FIELDNAME:lunchPlace
+Time;STRING:text;FIELDNAME:lunchTime
+Type of food;STRING:text;FIELDNAME:lunchTypeOfFood
+
+LABEL;Snack
+Place;STRING:text;FIELDNAME:snackPlace
+Time;STRING:text;FIELDNAME:snackTime
+Type of food;STRING:text;FIELDNAME:snackTypeOfFood
+
+LABEL;Dinner
+Place;STRING:text;FIELDNAME:dinnerPlace
+Time;STRING:text;FIELDNAME:dinnerTime
+Type of food;STRING:text;FIELDNAME:dinnerTypeOfFood
+
+Malnutrition; SINGLE:{No,Yes(specify)};FIELDNAME:malnutrition
+
+LABEL;Activities
+Idle Hours; STRING:text;   FIELDNAME:idleHours
+Active Hours; STRING:text;   FIELDNAME:activeHours
+
+LABEL;Menstrual Health
+Age of Menarche; STRING:number; FIELDNAME:ageOfMenarche|OPTIONAL
+Type of materials used during menstruation; STRING:text; FIELDNAME:menstruationMaterials|OPTIONAL
+
+
+LABEL;Family Involvement
+Family Interaction/Engagement; SINGLE:{No(specify),Yes}:If no, what is the reason; FIELDNAME:familyInteraction
+Community involvement; SINGLE:{No(specify),Yes}:If no, what is the reason; FIELDNAME:communityInvolvement
+
+Does the child have DRR knowledge?; SINGLE:{No,Yes}; FIELDNAME:childDrrKnowledge
+Any chief complaint from student; STRING:text; FIELDNAME:childComplaint

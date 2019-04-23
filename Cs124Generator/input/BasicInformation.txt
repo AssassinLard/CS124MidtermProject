@@ -1,0 +1,62 @@
+MODEL;Basic Information
+Patient ID; STRING:text; UNMAPPED
+
+FRAGMENT;Personal Information
+LABEL;Personal Information
+First Name; 	STRING:textPersonName; FIELDNAME:firstName
+Middle Name; 	STRING:textPersonName; FIELDNAME:middleName|OPTIONAL
+Last Name; 		STRING:textPersonName; FIELDNAME:lastName
+Sex; 			SINGLE:{Male, Female}; FIELDNAME:sex
+Marital Status; SINGLE:{Unmarried, Married, Divorced, Widowed/Widower, Broken/Separated}; FIELDNAME:maritalStatus
+
+LABEL;Birth Information (MM/DD/YYYY)
+Date of Birth in AD;  DATE; FIELDNAME:dateOfBirthInAd
+Date of Birth in BS;  DATE; FIELDNAME:dateOfBirthInBs
+Age; STRING:number; FIELDNAME:age
+
+
+FRAGMENT;Household Information
+LABEL;Family Information
+Family ID;STRING:text; FIELDNAME:familyID
+Type of Family; SINGLE:{Nuclear,Joint,Extended}; FIELDNAME:typeOfFamily
+
+LABEL;Address
+House Number; STRING:textPostalAddress; FIELDNAME:houseNumber
+Ward Number; STRING:textPostalAddress; FIELDNAME:wardNumber
+Municipality; STRING:textPostalAddress; FIELDNAME:municipality
+District; STRING:textPostalAddress; FIELDNAME:district
+Country; STRING:textPostalAddress; FIELDNAME:country
+ZipCode; STRING:textPostalAddress; FIELDNAME:zipcode
+
+LABEL;Household Information
+Father's Name; STRING:textPersonName; FIELDNAME:fathersName|OPTIONAL
+Father Late?; CHECKBOX; FIELDNAME: fatherLate;
+Mother's Name; STRING:textPersonName; FIELDNAME:mothersName|OPTIONAL
+Mother Late?; CHECKBOX; FIELDNAME: motherLate;
+Local Guardian's Name; STRING:textPersonName; FIELDNAME:localGuardiansName|OPTIONAL
+Contact Of Parent/Guardian; STRING:text; FIELDNAME:contactOfParentGuardian|OPTIONAL
+
+
+LABEL;Family Details in Number
+Male; STRING:number; FIELDNAME:numberMale
+Female; STRING:number; FIELDNAME:numberFemale
+Others; STRING:number; FIELDNAME:numberOthers
+Under 5 years Male; STRING:number; FIELDNAME:numberMaleUnder5
+Under 5 years Female; STRING:number; FIELDNAME:numberFemaleUnder5
+Above 60 years Male; STRING:number; FIELDNAME:numberMaleAbove60
+Above 60 years Female; STRING:number; FIELDNAME:numberFemaleAbove60
+Disabled; STRING:number; FIELDNAME:numberDisabled
+Pregnant; STRING:number; FIELDNAME:numberPregnant
+Lactating Mothers; STRING:number; FIELDNAME:numberLactatingMothers
+
+
+FRAGMENT;Socio-Economic Information
+LABEL;Socio-Economic Information
+Ethnicity; STRING:text; FIELDNAME:ethnicity
+Religion; STRING:text; FIELDNAME:religion
+Educational Status; SINGLE:{Illiterate, Literate, Primary Level(1-5), Secondary Level(6-10), Higher Secondary(11-12), Bachelor and above}; FIELDNAME:educationalStatus
+Occupation; SINGLE:{House Maker, Agriculture, Business, Services, Labor, Others(specify)}; FIELDNAME:occupation
+
+Main source of family income; MULTI:{Agriculture,Business,Service, Labor, Remittance, Others(specify)}; FIELDNAME:income
+
+Food sufficiency of your family from the main source of income; SINGLE:{Sufficient for less than 3 months, Sufficient for 3-5 months, Sufficient for 6-11 months, Sufficient for 12 months and with surplus}; FIELDNAME:foodSufficiency
