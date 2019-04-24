@@ -1,5 +1,6 @@
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,12 +12,17 @@ import processors.JavaSerializerProcessor;
 import processors.JavaValidatorProcessor;
 import processors.JsonTemplateProcessor;
 import processors.PojoProcessor;
+import interfaces.CreatorInterface;
+import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
+import io.github.lukehutch.fastclasspathscanner.scanner.ScanResult;
+import annotations.*;
 
-public class Parser 
+public class Parser
 {
 	private String dataFile;
-	
-	public Parser(String file)
+	private HashMap<String, CreatorInterface> map;
+	@SuppressWarnings("deprecation")
+	public Parser(String file) throws InstantiationException, IllegalAccessException, Exception
 	{
 		dataFile = file;
 		
@@ -29,7 +35,15 @@ public class Parser
 		addListener(new JavaSerializerProcessor());
 
 		addListener(new JsonTemplateProcessor());
-		
+		map = new HashMap<>();
+		ScanResult results = new FastClasspathScanner("interfaces").scan();		
+		List<String> allResults = results.getNamesOfClassesWithAnnotation(ParserAnnotation.class);
+		for (String s : allResults)
+		{
+			Class cc = Class.forName(s);
+			ParserAnnotation pa = (ParserAnnotation) cc.getAnnotation(ParserAnnotation.class);
+			map.put(pa.label(), (CreatorInterface) cc.newInstance());
+		}
 	}
 	
 	public void addListener(Object o)
@@ -87,33 +101,16 @@ public class Parser
 		{
 			String line = scanner.nextLine().trim();
 			try {
-				if (line.trim().isEmpty())
-				{
+				String[] aline = line.split(";");
+				if (line.trim().isEmpty()) {
 					continue;
 				}
-				
-				if (line.startsWith("#"))
-				{
-					// comment, ignore
+				if (line.startsWith("#")) {
 					continue;
 				}
-				
-				if (line.startsWith("MODEL"))
-				{
-					newModelCreated(line);
-				}
-				else if (line.startsWith("FRAGMENT"))
-				{
-					newFragmentCreated(line);
-				}
-				else if (line.startsWith("LABEL"))
-				{
-					newLabelCreated(line);
-				}
-				else
-				{
-					// field
-					newFieldCreated(line);
+				CreatorInterface ci = map.get(aline[0]);
+				if(ci != null) {
+					ci.process(line,fragmentListeners, fieldListeners, labelListeners, modelListeners);
 				}
 			} catch (RuntimeException e) {
 				// TODO Auto-generated catch block
@@ -137,42 +134,12 @@ public class Parser
 	{
 		fieldListeners.add(fl);
 	}
-	
-	public void newFieldCreated(String line)
-	{
-		String[] data = line.split(";");
-		
-		if (data.length<2)
-		{
-			throw new RuntimeException("not enough data for FIELD: "+line);
-		}
-		
-		for (FieldListener fl : fieldListeners)
-		{
-			fl.fieldCreated(data[0].trim(), data[1].trim(), data.length>2 ? data[2].trim() : null);
-		}
-	}
 
 	private List<FragmentListener> fragmentListeners = new ArrayList<>();
 	
 	public void addFragmentListener(FragmentListener fl)
 	{
 		fragmentListeners.add(fl);
-	}
-	
-	public void newFragmentCreated(String line)
-	{
-		String[] data = line.split(";");
-		
-		if (data.length<2)
-		{
-			throw new RuntimeException("not enough data for FRAGMENT");
-		}
-
-		for (FragmentListener fl : fragmentListeners)
-		{
-			fl.fragmentCreated(data[1].trim());
-		}
 	}
 
 	private List<ModelListener> modelListeners = new ArrayList<>();
@@ -182,21 +149,6 @@ public class Parser
 		modelListeners.add(fl);
 	}
 	
-	public void newModelCreated(String line)
-	{
-		String[] data = line.split(";");
-		
-		if (data.length<2)
-		{
-			throw new RuntimeException("not enough data for MODEL");
-		}
-
-		for (ModelListener fl : modelListeners)
-		{
-			fl.modelCreated(data[1].trim());
-		}
-	}	
-	
 	private List<LabelListener> labelListeners = new ArrayList<>();
 	
 	public void addLabelListener(LabelListener fl)
@@ -204,18 +156,4 @@ public class Parser
 		labelListeners.add(fl);
 	}
 	
-	public void newLabelCreated(String line)
-	{
-		String[] data = line.split(";");
-		
-		if (data.length<2)
-		{
-			throw new RuntimeException("not enough data for LABEL");
-		}
-
-		for (LabelListener fl : labelListeners)
-		{
-			fl.labelCreated(data[1].trim());
-		}
-	}	
 }

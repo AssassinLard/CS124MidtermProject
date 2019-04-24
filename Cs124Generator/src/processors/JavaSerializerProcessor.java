@@ -8,8 +8,11 @@ import java.nio.charset.Charset;
 import org.apache.commons.io.FileUtils;
 
 import listeners.FieldListener;
+import listeners.FragmentListener;
+import listeners.LabelListener;
+import listeners.ModelListener;
 
-public class JavaSerializerProcessor implements FieldListener {
+public class JavaSerializerProcessor implements ModelListener, FragmentListener, FieldListener , LabelListener{
 
 	String modelName;
 	String fragmentName;
@@ -119,6 +122,13 @@ public class JavaSerializerProcessor implements FieldListener {
 		}	
 	}
 	
+	
+	@Override
+	public void fieldDone() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	@Override
 	public void fragmentCreated(String fragmentName) {
@@ -129,6 +139,14 @@ public class JavaSerializerProcessor implements FieldListener {
 		callBuffer.append("\n\t\t// "+fragmentName+"\n");
 
 	}
+
+
+	@Override
+	public void fragmentDone() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	@Override
 	public void modelCreated(String modelName) {
@@ -175,6 +193,13 @@ public class JavaSerializerProcessor implements FieldListener {
 		
 		
 	}
+
+
+	@Override
+	public void labelCreated(String label) {
+
+	}
+	
 	
 	
 }

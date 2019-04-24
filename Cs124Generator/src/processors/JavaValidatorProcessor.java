@@ -11,8 +11,10 @@ import java.util.Iterator;
 import org.apache.commons.io.FileUtils;
 
 import listeners.FieldListener;
+import listeners.FragmentListener;
+import listeners.ModelListener;
 
-public class JavaValidatorProcessor implements FieldListener {
+public class JavaValidatorProcessor implements ModelListener, FragmentListener, FieldListener {
 
 	String modelName;
 	String fragmentName;
@@ -247,11 +249,25 @@ public class JavaValidatorProcessor implements FieldListener {
 			e.printStackTrace();
 		}
 	}
+	
+	@Override
+	public void fieldDone() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	@Override
 	public void fragmentCreated(String fragmentName) {
 		// TODO Auto-generated method stub
 		this.fragmentName = fragmentName;
+		
+	}
+
+
+	@Override
+	public void fragmentDone() {
+		// TODO Auto-generated method stub
 		
 	}
 

@@ -9,8 +9,10 @@ import java.util.LinkedHashMap;
 import org.apache.commons.io.FileUtils;
 
 import listeners.FieldListener;
+import listeners.FragmentListener;
+import listeners.ModelListener;
 
-public class JsonTemplateProcessor implements FieldListener {
+public class JsonTemplateProcessor implements ModelListener, FragmentListener, FieldListener {
 
 	boolean useSampleValues = true;
 	
@@ -199,11 +201,27 @@ public class JsonTemplateProcessor implements FieldListener {
 		sb.append("\t\t");
 	}
 
+
+
+
+	@Override
+	public void fieldDone() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	@Override
 	public void fragmentCreated(String fragmentName) {
 		// TODO Auto-generated method stub
 		fieldBuffer.append("\n\n");
 	}
 
+	@Override
+	public void fragmentDone() {
+		// TODO Auto-generated method stub
+		
+	}
 
+	
+	
 }
